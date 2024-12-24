@@ -27,7 +27,7 @@ export class UserCommand extends Command {
 	}
 
 	public override async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
-		await interaction.reply({ content: 'Selvä juttu mestari! Sammutetaan...' });
+		await interaction.reply({ content: 'Sammutaan... 🥴💤' });
 		process.exit(0);
 	}
 }

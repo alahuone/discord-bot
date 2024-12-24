@@ -10,11 +10,15 @@ export class UserCommand extends Command {
 	public override registerApplicationCommands(registry: Command.Registry) {
 		// Create shared integration types and contexts
 		// These allow the command to be used in guilds and DMs
-		const integrationTypes: ApplicationIntegrationType[] = [ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall];
+		const integrationTypes: ApplicationIntegrationType[] = [
+			ApplicationIntegrationType.GuildInstall, 
+			// ApplicationIntegrationType.UserInstall
+
+		];
 		const contexts: InteractionContextType[] = [
-			InteractionContextType.BotDM,
+			// InteractionContextType.BotDM,
 			InteractionContextType.Guild,
-			InteractionContextType.PrivateChannel
+			// InteractionContextType.PrivateChannel
 		];
 
 		// Register Chat Input command
@@ -26,20 +30,20 @@ export class UserCommand extends Command {
 		});
 
 		// Register Context Menu command available from any message
-		registry.registerContextMenuCommand({
-			name: this.name,
-			type: ApplicationCommandType.Message,
-			integrationTypes,
-			contexts
-		});
+		// registry.registerContextMenuCommand({
+		// 	name: this.name,
+		// 	type: ApplicationCommandType.Message,
+		// 	integrationTypes,
+		// 	contexts
+		// });
 
 		// Register Context Menu command available from any user
-		registry.registerContextMenuCommand({
-			name: this.name,
-			type: ApplicationCommandType.User,
-			integrationTypes,
-			contexts
-		});
+		// registry.registerContextMenuCommand({
+		// 	name: this.name,
+		// 	type: ApplicationCommandType.User,
+		// 	integrationTypes,
+		// 	contexts
+		// });
 	}
 
 	// Message command
